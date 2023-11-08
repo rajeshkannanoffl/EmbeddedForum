@@ -1,2 +1,2 @@
-# session-alpha
+# Session Alpha
 A Personal Session. (ALPHA)
