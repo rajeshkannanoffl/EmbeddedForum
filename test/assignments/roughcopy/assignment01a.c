@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 int bitReverse(unsigned char num, unsigned char n_bits){
     unsigned char res = 0;
     for(int i=0; i<n_bits; i++){
@@ -13,12 +12,12 @@ int bitReverse(unsigned char num, unsigned char n_bits){
 }
 
 int array_process(int size, unsigned char *ptr, unsigned char no_bits){
-    unsigned char mask = (pow(2, no_bits))-1;
-    unsigned char value;
+    unsigned char value[size];
     for (int i=0; i<size; i++){
-        value = bitReverse(ptr[i], no_bits);
-        ptr[i] &=(~mask);
-        ptr[i] |= value;
+        value[i] = ptr[i]&7;
+        value[i] = bitReverse(value[i], no_bits);
+        ptr[i] = ptr[i]&(~7);
+        ptr[i] = ptr[i] | value[i];
         printf("%d ", ptr[i]);
     }
     return 0;
