@@ -12,12 +12,12 @@ int bitReverse(unsigned char num, unsigned char n_bits){
 }
 
 int array_process(int size, unsigned char *ptr, unsigned char no_bits){
-    unsigned char value[size];
+    unsigned char value;
     for (int i=0; i<size; i++){
-        value[i] = ptr[i]&7;
-        value[i] = bitReverse(value[i], no_bits);
+        //value = ptr[i]&7;
+        value = bitReverse(value, no_bits);
         ptr[i] = ptr[i]&(~7);
-        ptr[i] = ptr[i] | value[i];
+        ptr[i] = ptr[i] | value;
         printf("%d ", ptr[i]);
     }
     return 0;
