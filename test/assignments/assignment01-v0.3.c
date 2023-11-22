@@ -23,12 +23,13 @@ int array_process(int size, unsigned char *ptr, unsigned char no_bits){
     unsigned char mask = (pow(2, no_bits))-1;
     // Create an unsigned char to store the reversed bits
     unsigned char value;
-    printf("\nModified array elements are: ");
     for (int i=0; i<size; i++){
         // Reverse the specified number of bits in the current array element
         value = bitReverse(ptr[i], no_bits);
-        // Clear and Set the the bits to be reversed in the current array element using the bitmask
-        ptr[i] = (ptr[i]&(~mask)) | value;
+        // Clear the bits to be reversed in the current array element using the bitmask
+        ptr[i] &=(~mask);
+        // Set the reversed bits in the current array element
+        ptr[i] |= value;
         // Print the modified array element
         printf("%d ", ptr[i]);
     }
@@ -52,12 +53,6 @@ int main(){
     // Input of the number of bits to be reversed
     printf("Enter the no.of bits to be reversed: ");
     scanf("%hhd", &bit_reverse);
-
-    // Print the array elements
-    printf("\nArray elements are: ");
-    for(int i=0; i<arr_size; i++){
-        printf("%d ", arr[i]);
-    }
 
     // Process and get the modified array by reversing the specified number of bits
     array_process(arr_size, arr, bit_reverse);
