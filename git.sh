@@ -6,7 +6,7 @@ git add .
 sleep 2
 git status
 sleep 2
-git commit -m "Session Update"
+git commit -m "Nov 23 2023"
 sleep 2
 git push -f
 sleep 2
