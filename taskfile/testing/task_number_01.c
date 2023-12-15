@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "string.h"
 #include "stdbool.h"
-#include <math.h> 
+#include <math.h>
 
 bool isPrime(int val) {
     int check = 1; 
@@ -71,243 +71,120 @@ bool testStrings(int option, char* val1, char* val2) {
     }
 }
 
+/*
+    Testing for Integers.
+*/
 TEST(IntTestSuite, IntEqualTest){
-    // Arrange
-    int a = 10;
-    int b = 10;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    EXPECT_EQ(a, b);
-    ASSERT_TRUE(equal_test);
+    EXPECT_EQ(10, 10);
+    ASSERT_TRUE(testInt(1, 10, 10));
 }
 
 TEST(IntTestSuite, IntLesserNotEqualTest){
-    // Arrange
-    int a = 10;
-    int b = 15;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    EXPECT_LT(a, b);
-    ASSERT_FALSE(equal_test);
+    EXPECT_LT(10, 15);
+    ASSERT_FALSE(testInt(1, 10, 15));
 }
 
 TEST(IntTestSuite, IntGreaterNotEqualTest){
-    // Arrange
-    int a = 15;
-    int b = 10;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    EXPECT_GT(a, b);
-    ASSERT_FALSE(equal_test);
+    EXPECT_GT(15, 10);
+    ASSERT_FALSE(testInt(1, 15, 10));
 }
 
 TEST(IntTestSuite, IntFloatEqualTest){
-    // Arrange
-    int a = 10.5;
-    int b = 10.5;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    EXPECT_FLOAT_EQ(a, b);
-    ASSERT_TRUE(equal_test);
+    EXPECT_EQ(10.5, 10.5);
+    ASSERT_TRUE(testInt(1, 10.5, 10.5));
 }
 
 TEST(IntTestSuite, IntLesserFloatNotEqualTest){
-    // Arrange
-    int a = 10.5;
-    int b = 11.9;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    EXPECT_LT(a, b);
-    ASSERT_FALSE(equal_test);
+    EXPECT_LT(10.5, 11.9);
+    ASSERT_FALSE(testInt(1, 10.5, 11.9));
 }
 
 TEST(IntTestSuite, IntGreaterFloatNotEqualTest){
-    // Arrange
-    int a = 12.5;
-    int b = 11.9;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    EXPECT_GT(a, b);
-    ASSERT_FALSE(equal_test);
+    EXPECT_GT(12.5, 11.9);
+    ASSERT_FALSE(testInt(1, 12.5, 11.9));
 }
 
 TEST(IntTestSuite, IntNegativeNotEqualTest){
-    // Arrange
-    int a = -10;
-    int b = 10;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    ASSERT_FALSE(equal_test);
+    ASSERT_FALSE(testInt(1, -10, 10));
 }
 
 TEST(IntTestSuite, IntNegativeEqualTest){
-    // Arrange
-    int a = -10;
-    int b = -10;
-    // Act
-    bool equal_test = testInt(1, a, b);
-    // Assert
-    ASSERT_TRUE(equal_test);
+    ASSERT_TRUE(testInt(1, -10, -10));
 }
 
 TEST(IntTestSuite, IntIsNotFactorialTest){
-    // Arrange
-    int a = 5;
-    int b = 100;
-    // Act
-    bool factorial_test = testInt(2, a, b);
-    // Assert
-    ASSERT_FALSE(factorial_test);
+    ASSERT_FALSE(testInt(2, 5, 100));
 }
 
 TEST(IntTestSuite, IntIsFactorialTest){
-    // Arrange
-    int a = 5;
-    int b = 120;
-    // Act
-    bool factorial_test = testInt(2, a, b);
-    // Assert
-    ASSERT_TRUE(factorial_test);
+    ASSERT_TRUE(testInt(2, 5, 120));
 }
 
 TEST(IntTestSuite, IntFloatIsNotFactorialTest){
-    // Arrange
-    int a = 5.5;
-    int b = 100;
-    // Act
-    bool factorial_test = testInt(2, a, b);
-    // Assert
-    ASSERT_FALSE(factorial_test);
+    ASSERT_FALSE(testInt(2, 5.5, 100));
 }
 
 TEST(IntTestSuite, IntFloatIsFactorialTest){
-    // Arrange
-    int a = 5.5;
-    int b = 120;
-    // Act
-    bool factorial_test = testInt(2, a, b);
-    // Assert
-    ASSERT_TRUE(factorial_test);
+    ASSERT_TRUE(testInt(2, 5.5, 120));
 }
 
 TEST(IntTestSuite, IntIsNotPrimeTest){
-    // Arrange
-    int a = 9;
-    int b = 10;
-    // Act
-    bool prime_test = testInt(3, a, b);
-    // Assert
-    ASSERT_FALSE(prime_test);
+    ASSERT_FALSE(testInt(3, 9, 10));
 }
 
 TEST(IntTestSuite, IntIsPrimeTest){
-    // Arrange
-    int a = 11;
-    int b = 10;
-    // Act
-    bool prime_test = testInt(3, a, b);
-    // Assert
-    ASSERT_TRUE(prime_test);
+    ASSERT_TRUE(testInt(3, 11, 10));
 }
 
 TEST(IntTestSuite, IntFloatIsNotPrimeTest){
-    // Arrange
-    int a = 9.9;
-    int b = 10;
-    // Act
-    bool prime_test = testInt(3, a, b);
-    // Assert
-    ASSERT_FALSE(prime_test);
+    ASSERT_FALSE(testInt(3, 9.9, 10));
 }
 
 TEST(IntTestSuite, IntFloatIsPrimeTest){
-    // Arrange
-    int a = 11.8;
-    int b = 10;
-    // Act
-    bool prime_test = testInt(3, a, b);
-    // Assert
-    ASSERT_TRUE(prime_test);
+    ASSERT_TRUE(testInt(3, 11.8, 10));
 }
 
 TEST(IntTestSuite, IntDefaultTesT){
-    // Arrange
-    int a = 10;
-    int b = 11;
-    // Act
-    bool default_test = testInt(0, a, b);
-    // Assert
-    ASSERT_TRUE(default_test);
+    ASSERT_TRUE(testInt(0, 10, 11));
 }
 
 TEST(StringTestSuite, StringNotEqualTest){
-    // Arrange
     char *str1 = (char*)"Hello";
     char *str2 = (char*)"World";
-    // Act
-    bool comparison_test = testStrings(1, str1, str2);
-    // Assert
     EXPECT_STRNE(str1, str2);
-    ASSERT_FALSE(comparison_test);
+    ASSERT_FALSE(testStrings(1, str1, str2));
 }
 
 TEST(StringTestSuite, StringEqualTest){
-    // Arrange
     char *str1 = (char*)"Hello";
     char *str2 = (char*)"Hello";
-    // Act
-    bool comparison_test = testStrings(1, str1, str2);
-    // Assert
     EXPECT_STREQ(str1, str2);
-    ASSERT_TRUE(comparison_test);
+    ASSERT_TRUE(testStrings(1, str1, str2));
 }
 
 TEST(StringTestSuite, StringCaseNotEqualTest){
-    // Arrange
     char *str1 = (char*)"HeLLo";
     char *str2 = (char*)"WORLD";
-    // Act
-    bool comparison_test = testStrings(1, str1, str2);
-    // Assert
     EXPECT_STRCASENE(str1, str2);
-    ASSERT_FALSE(comparison_test);
+    ASSERT_FALSE(testStrings(1, str1, str2));
 }
 
 TEST(StringTestSuite, StringCaseEqualTest){
-    // Arrange
     char *str1 = (char*)"HeLLO";
     char *str2 = (char*)"HeLLO";
-    // Act
-    bool comparison_test = testStrings(1, str1, str2);
-    // Assert
     EXPECT_STRCASEEQ(str1, str2);
-    ASSERT_TRUE(comparison_test);
+    ASSERT_TRUE(testStrings(1, str1, str2));
 }
 
 
 TEST(StringTestSuite, StringConcatenateTest){
-    // Arrange
-    char str1[10] = "Hello";
+    char str1[15] = "Hello";
     char *str2 = (char*)" World";
-    // Act
-    bool concatenate_test = testStrings(2, str1, str2);
-    // Assert
-    ASSERT_TRUE(concatenate_test);
+    ASSERT_TRUE(testStrings(2, str1, str2));
 }
 
 TEST(StringTestSuite, StringDefaultTest){
-    // Arrange
     char *str1 = (char*)"Hello";
     char *str2 = (char*)"World";
-    // Act
-    bool default_test = testStrings(0, str1, str2);
-    // Assert
-    ASSERT_FALSE(default_test);
+    ASSERT_FALSE(testStrings(0, str1, str2));
 }
