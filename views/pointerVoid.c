@@ -2,7 +2,7 @@
 
 int main() {
     // Declaring a Void Pointer
-    void *ptr;
+    void *ptr ;
 
     // Initializing variables
     int a = 10;

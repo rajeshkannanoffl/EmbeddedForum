@@ -114,7 +114,22 @@ OR     |  0 |  0 |  1 | 1 | 1 | 1 | 0 |
     -> Dynamically allocated nodes
     -> Node - one date, one link
 ---
+## Steps To Install ST-Link
 
+1) Go to: https://www.st.com/en/development-tools/st-link-server.html
+
+2) Install the latest version
+
+3) Will ask Permission, Give administrative permission ( Option 1)
+
+4) Wait for the permission approval
+
+5) Once its approved , Install the ST-Link again
+
+6) Restart the Application
+
+7) Debug and Run (Make Debug configuration changes as mentioned in the course)
+---
 
 
 

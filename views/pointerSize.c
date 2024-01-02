@@ -7,6 +7,8 @@ int main() {
     // Print the size of a character pointer
     printf("\nSize of Char Pointer: %lld", sizeof(char*));
 
+    printf("\nSize of Void Pointer: %lld", sizeof(void*));
+
     // Return 0 to indicate successful execution
     return 0;
 }
